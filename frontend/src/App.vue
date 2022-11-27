@@ -13,7 +13,7 @@
                     dek: false,
                     passcode: false
                 },
-                dataStd: [],
+                dataStd: [1,2],
                 dataPasscode: [],
                 result_reason: '',
                 result_noDek65: '🙋‍♂️🙋‍♀️',
@@ -356,8 +356,7 @@
         </div>
 
 
-
-        <div class="col-span-2 w-10/12 title font_prompt">
+        <div class="relative col-span-2 w-10/12 title font_prompt">
             <p>กิจกรรมจับสายรหัส IT {{ new Date().getFullYear() + 543 }}&nbsp;&nbsp;<span :class="{'hidden': data_dek.no !== ''}" class="text-lg relative"><span class="text-4xl absolute -right-16 -top-2">🐒</span> อูก๊า ๆๆๆๆๆ</span></p>
         </div>
 
@@ -398,7 +397,35 @@
         </div>
 
 
-        <div class="mt-6 row-span-2 col-span-2 w-10/12 mx-auto">
+        <div class="relative mt-6 row-span-2 col-span-2 w-10/12 mx-auto">
+
+
+            <!-- Credit Dev -->
+            <a
+                target="_blank"
+                href="https://www.instagram.com/csnp.ch/"
+                class="
+                    creditDev z-[999] hhover:bg-black hover:text-red-600 duration-300 cursor-pointer
+                    absolute -right-[8rem] transform shadow-lg tracking-widest px-2.5 text-indigo-800
+                    bg-gray-50 p-2 rounded-lg rotate-90 flex justify-between items-center gap-x-1.5
+                "
+                :class="{
+                    '-top-[18rem]': dataStd.length !== 0,
+                    'top-[3.5rem]': dataStd.length === 0,
+                }"
+            >
+                <i class="fab fa-instagram text-lg"></i>
+                <p class="-mt-0.5">csnp.ch</p>
+            </a>
+            <div class="box absolute -right-[4.5rem] opacity-20 z-0"
+                :class="{
+                    '-top-[18.5rem]': dataStd.length !== 0,
+                    'top-[3rem]': dataStd.length === 0,
+                }"></div>
+            <!-- End -->
+
+
+
             <div
                 :class="{'hidden': !statusStep.dek}"  
                 class="cardResult hover:bg-sky-100 cursor-crosshair"
@@ -455,15 +482,6 @@
             {{ totalDek - dataHistory.length }} 🐵 : 🍌 {{ dataPasscode.length }}
         </div>
 
-<div
-            class="
-                text- fixed top-80 left-20 transform shadow-md
-                -translate-x-1/2 -translate-y-1/2 bg-gray-50 p-2 rounded-lg
-                rotate-90 tracking-widest
-            "
-        >
-            © csnp.ch
-        </div>
         <div class="space mb-40"></div>
         <!-- @click.prevent="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')" -->
     </div>
