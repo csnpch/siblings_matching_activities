@@ -1,0 +1,10 @@
+#- Backend
+# Logs
+backend/logs
+backend/.vscode/*
+backend/node_modules
+
+#- Frontend
+frontend/logs
+frontend/.vscode/*
+frontend/node_modules

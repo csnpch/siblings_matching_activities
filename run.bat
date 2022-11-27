@@ -1,0 +1,1 @@
+cd ./backend && start cmd /k yarn dev && cd .. && cd ./frontend && yarn dev && cd ..
